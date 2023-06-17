@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from django.views.generic import ListView
+from findlatinnights.events.models import Event
 
-# Create your views here.
+
+class EventListView(ListView):
+    model = Event
+    template_name = 'event_list.html'
+    context_object_name = 'events'

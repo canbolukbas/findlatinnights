@@ -1,0 +1,16 @@
+<!-- event_list.html -->
+{% for event in events %}
+    <div>
+        <a href="{{ event.external_url }}">
+            <h3>{{ event.title }}</h3>
+        </a>
+        {% if event.image %}
+            <img src="{{ event.image.url }}" alt="{{ event.title }}">
+        {% endif %}
+        <p>Venue: {{ event.venue }}</p>
+        <p>Price: {{ event.price }} TL</p>
+        <p>Start Date/Time: {{ event.start_datetime }}</p>
+        <p>End Date/Time: {{ event.end_datetime }}</p>
+        <!-- Include other event details as needed -->
+    </div>
+{% endfor %}
