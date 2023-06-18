@@ -268,4 +268,4 @@ pyrightconfig.json
 # images of the venue
 /event_images/
 static
-!generated_static_website/*
+!docs/*
