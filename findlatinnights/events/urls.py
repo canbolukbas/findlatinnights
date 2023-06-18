@@ -1,6 +1,7 @@
-from django.urls import path
 from findlatinnights.events.views import EventListView
+from django_distill import distill_path
+
 
 urlpatterns = [
-    path('', EventListView.as_view(), name='event_list'),
+    distill_path('', EventListView.as_view(), name='event_list'),
 ]

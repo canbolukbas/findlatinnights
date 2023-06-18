@@ -266,4 +266,6 @@ pyrightconfig.json
 # End of https://www.toptal.com/developers/gitignore/api/django,python
 
 # images of the venue
-event_images
+/event_images/
+static
+!generated_static_website/*
