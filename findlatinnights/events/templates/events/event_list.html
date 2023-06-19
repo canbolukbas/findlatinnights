@@ -1,19 +1,27 @@
 <!-- event_list.html -->
-{% for event in events %}
-    <div>
-        <a href="{{ event.external_url }}">
-            <h3>{{ event.title }}</h3>
-        </a>
-        {% if event.image %}
-            <img src="{{ event.image.url }}" alt="{{ event.title }}">
-        {% endif %}
-        <p>Venue: {{ event.venue }}</p>
-        <p>Price: {{ event.price }} TL</p>
-        <p>Start Date/Time: {{ event.start_datetime }}</p>
-        <p>End Date/Time: {{ event.end_datetime }}</p>
-        <p>Does Play Bachata: {{ event.does_play_bachata }}</p>
-        <p>Does Play Salsa: {{ event.does_play_salsa }}</p>
-        <p>Does Play Kizomba: {{ event.does_play_kizomba }}</p>
-        <!-- Include other event details as needed -->
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+<div class="event-list">
+  {% for event in events %}
+  <div class="event-box">
+    <a href="{{ event.external_url }}">
+      <h3>{{ event.title }}</h3>
+    </a>
+    {% if event.image %}
+    <div class="image-container">
+      <img src="{{ event.image.url }}" alt="{{ event.title }}">
     </div>
-{% endfor %}
+    {% endif %}
+    <p class="venue">📍 {{ event.venue }}</p>
+    <p class="datetime">⏰ {{ event.start_datetime|date:"F j, Y" }}</p>
+    <p class="time">⏰ {{ event.start_datetime|time:"H:i" }} - {{ event.end_datetime|time:"H:i" }}</p>
+    <p class="music">💃
+      {% if event.does_play_salsa %} Salsa, {% endif %}
+      {% if event.does_play_bachata %} Bachata, {% endif %}
+      {% if event.does_play_kizomba %} Kizomba {% endif %}
+    </p>
+  </div>
+  {% endfor %}
+</div>

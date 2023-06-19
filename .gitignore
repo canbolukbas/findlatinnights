@@ -271,3 +271,5 @@ static
 !docs/*
 
 .DS_Store
+
+!/findlatinnights/events/static
