@@ -6,3 +6,4 @@ class EventListView(ListView):
     model = Event
     template_name = 'event_list.html'
     context_object_name = 'events'
+    ordering = 'start_datetime'
