@@ -1,0 +1,70 @@
+/* style.css */
+.event-list {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .event-box {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .image-container {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .venue {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .datetime {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .time {
+    margin-bottom: 5px;
+  }
+  
+  .music {
+    margin-bottom: 5px;
+  }
+  
+  h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+/* style.css */
+.event {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.event .image-container {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+}
+
+.event .event-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.venue, .price, .date, .time, .music {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
