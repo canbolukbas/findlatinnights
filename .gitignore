@@ -269,3 +269,5 @@ pyrightconfig.json
 /event_images/
 static
 !docs/*
+
+.DS_Store
