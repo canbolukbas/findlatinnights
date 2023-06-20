@@ -9,11 +9,6 @@
     <a href="{{ event.external_url }}">
       <h3>{{ event.title }}</h3>
     </a>
-    {% if event.image %}
-    <div class="image-container">
-      <img src="{{ event.image.url }}" alt="{{ event.title }}">
-    </div>
-    {% endif %}
     <p class="venue">📍 {{ event.venue }}</p>
     <p class="datetime">⏰ {{ event.start_datetime|date:"F j, Y" }}</p>
     <p class="time">⏰ {{ event.start_datetime|time:"H:i" }} - {{ event.end_datetime|time:"H:i" }}</p>
