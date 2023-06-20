@@ -3,7 +3,8 @@ A website that shows the latin dance night events around your city.
 
 👉🏻 https://canbolukbas.github.io/findlatinnights/
 
-## Daily Maintenance Steps
+### Daily Maintenance Steps
+
 ```
 ./manage.py distill-local docs --collectstatic --force
 mv ./docs/events/index.html ./docs/index.html
