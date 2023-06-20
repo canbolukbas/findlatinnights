@@ -4,19 +4,32 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 
 <div class="event-list">
-  {% for event in events %}
-  <div class="event-box">
-    <a href="{{ event.external_url }}">
-      <h3>{{ event.title }}</h3>
-    </a>
-    <p class="venue">📍 {{ event.venue }}</p>
-    <p class="datetime">⏰ {{ event.start_datetime|date:"F j, Y" }}</p>
-    <p class="time">⏰ {{ event.start_datetime|time:"H:i" }} - {{ event.end_datetime|time:"H:i" }}</p>
-    <p class="music">💃
-      {% if event.does_play_salsa %} Salsa, {% endif %}
-      {% if event.does_play_bachata %} Bachata, {% endif %}
-      {% if event.does_play_kizomba %} Kizomba {% endif %}
-    </p>
-  </div>
-  {% endfor %}
+  {% if events %}
+    {% with events|first as first_event %}
+      {% with first_event.start_datetime.date as current_date %}
+        <h2 class="date-title">🗓 {{ current_date|date:"F j, Y" }}</h2>
+        {% for event in events %}
+          {% if event.start_datetime.date != current_date %}
+            {% with event.start_datetime.date as current_date %}
+              <h2 class="date-title">🗓  {{ current_date|date:"F j, Y" }}</h2>
+            {% endwith %}
+          {% endif %}
+          <div class="event-box">
+            <a href="{{ event.external_url }}">
+              <h3>{{ event.title }}</h3>
+            </a>
+            <p class="venue">📍 {{ event.venue }}</p>
+            <p class="datetime">⏰ {{ event.start_datetime|time:"H:i" }} - {{ event.end_datetime|time:"H:i" }}</p>
+            <p class="music">💃
+              {% if event.does_play_salsa %} Salsa, {% endif %}
+              {% if event.does_play_bachata %} Bachata, {% endif %}
+              {% if event.does_play_kizomba %} Kizomba {% endif %}
+            </p>
+          </div>
+        {% endfor %}
+      {% endwith %}
+    {% endwith %}
+  {% else %}
+    <p>No events found.</p>
+  {% endif %}
 </div>
