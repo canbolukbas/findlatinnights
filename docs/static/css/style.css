@@ -11,6 +11,11 @@
     margin-bottom: 10px;
   }
   
+  .date-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
   .venue {
     font-weight: bold;
     margin-bottom: 5px;
@@ -33,15 +38,3 @@
     margin-top: 0;
     margin-bottom: 10px;
   }
-
-/* style.css */
-.event {
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    padding: 10px;
-}
-
-.venue, .price, .date, .time, .music {
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
