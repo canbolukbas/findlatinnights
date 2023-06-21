@@ -12,3 +12,6 @@ class Event(models.Model):
     external_url = models.URLField()
     start_datetime = models.DateTimeField()
     end_datetime = models.DateTimeField()
+
+    def __str__(self) -> str:
+        return f'{self.title}'

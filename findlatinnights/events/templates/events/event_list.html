@@ -15,8 +15,8 @@
               <h2 class="date-title">🗓  {{ current_date|date:"F j, Y" }}</h2>
           {% endif %}
           <div class="event-box">
-            <a href="{{ event.external_url }}">
-              <h3>{{ event.title }}</h3>
+            <a href="{{ event.external_url }}" class="event-link">
+              <h3>{{ event.title }} 🔗</h3>
             </a>
             <p class="venue">📍 {{ event.venue }}</p>
             <p class="datetime">⏰ {{ event.start_datetime|time:"H:i" }} - {{ event.end_datetime|time:"H:i" }}</p>
