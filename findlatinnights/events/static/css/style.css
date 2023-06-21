@@ -1,4 +1,9 @@
  /* style.css */
+ 
+ * {
+    box-sizing: border-box;
+ }
+ 
  body {
     background-color: #F6F6F6; /* light gray */
     font-family: 'Arial', sans-serif;
