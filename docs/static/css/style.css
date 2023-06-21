@@ -1,36 +1,54 @@
-/* style.css */
-.event-list {
+ /* style.css */
+ body {
+    background-color: #F6F6F6; /* light gray */
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 0px;
+    padding: 0;
+  }
+  
+  .event-list {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    width: 80%; 
+    max-width: 1200px;
   }
   
   .event-box {
+    background-color: #FFFFFF; /* white */
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 10px;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .event-box:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .event-link {
+    text-decoration: none;
+    color: #007BFF; /* this is a bootstrap primary color, you can adjust it according to your color scheme */
+  }
+
+  .event-link:hover {
+    text-decoration: underline;
   }
   
   .date-title {
     font-weight: bold;
     margin-bottom: 10px;
+    text-align: center;
+    white-space: nowrap;
   }
   
-  .venue {
+  .venue, .datetime, .time, .music {
     font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  .datetime {
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  .time {
-    margin-bottom: 5px;
-  }
-  
-  .music {
     margin-bottom: 5px;
   }
   
