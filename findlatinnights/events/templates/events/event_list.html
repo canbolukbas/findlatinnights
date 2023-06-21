@@ -1,18 +1,18 @@
 <!-- event_list.html -->
 {% load static %}
+{% load setvar %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 
 <div class="event-list">
   {% if events %}
     {% with events|first as first_event %}
-      {% with first_event.start_datetime.date as current_date %}
+      {% setvar first_event.start_datetime.date as current_date %}
         <h2 class="date-title">🗓 {{ current_date|date:"F j, Y" }}</h2>
         {% for event in events %}
           {% if event.start_datetime.date != current_date %}
-            {% with event.start_datetime.date as current_date %}
+            {% setvar event.start_datetime.date as current_date %}
               <h2 class="date-title">🗓  {{ current_date|date:"F j, Y" }}</h2>
-            {% endwith %}
           {% endif %}
           <div class="event-box">
             <a href="{{ event.external_url }}">
@@ -28,7 +28,6 @@
             </p>
           </div>
         {% endfor %}
-      {% endwith %}
     {% endwith %}
   {% else %}
     <p>No events found.</p>
