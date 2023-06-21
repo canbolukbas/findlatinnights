@@ -1,4 +1,9 @@
  /* style.css */
+ 
+ * {
+    box-sizing: border-box;
+ }
+ 
  body {
     background-color: #F6F6F6; /* light gray */
     font-family: 'Arial', sans-serif;
@@ -12,8 +17,8 @@
   .event-list {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 80%; 
+    width: 80%;
+    gap: 8px;
     max-width: 1200px;
   }
   
@@ -22,7 +27,6 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px;
-    margin-bottom: 10px;
     width: 100%;
     transition: all 0.3s ease-in-out;
   }
@@ -42,9 +46,7 @@
   
   .date-title {
     font-weight: bold;
-    margin-bottom: 10px;
     text-align: center;
-    white-space: nowrap;
   }
   
   .venue, .datetime, .time, .music {
@@ -54,5 +56,4 @@
   
   h3 {
     margin-top: 0;
-    margin-bottom: 10px;
   }
