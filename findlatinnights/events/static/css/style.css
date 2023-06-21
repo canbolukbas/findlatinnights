@@ -12,7 +12,6 @@
   .event-list {
     display: flex;
     flex-direction: column;
-    align-items: center;
     width: 80%; 
     max-width: 1200px;
   }
@@ -44,7 +43,6 @@
     font-weight: bold;
     margin-bottom: 10px;
     text-align: center;
-    white-space: nowrap;
   }
   
   .venue, .datetime, .time, .music {
