@@ -1,7 +1,7 @@
 # Find Latin Nights
 A website that shows the latin dance night events around your city.
 
-👉🏻 findlatinnights.com
+👉🏻 [findlatinnights.com](http://findlatinnights.com)
 
 ### Daily Maintenance Steps: Generate Static Website
 
