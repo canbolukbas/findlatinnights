@@ -1,7 +1,7 @@
 # Find Latin Nights
 A website that shows the latin dance night events around your city.
 
-👉🏻 https://canbolukbas.github.io/findlatinnights/
+👉🏻 findlatinnights.com
 
 ### Daily Maintenance Steps: Generate Static Website
 
