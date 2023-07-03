@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.exceptions import ValidationError
 
 
 class Event(models.Model):
@@ -15,3 +16,7 @@ class Event(models.Model):
 
     def __str__(self) -> str:
         return f'{self.title}'
+
+    def clean(self):
+        if self.end_datetime <= self.start_datetime:
+            raise ValidationError("End time must be after start time")
