@@ -1,3 +1,4 @@
+from collections.abc import Iterable
 from django.db import models
 from django.core.exceptions import ValidationError
 
@@ -20,3 +21,7 @@ class Event(models.Model):
     def clean(self):
         if self.end_datetime <= self.start_datetime:
             raise ValidationError("End time must be after start time")
+
+    def save(self):
+        self.full_clean()
+        return super().save()
