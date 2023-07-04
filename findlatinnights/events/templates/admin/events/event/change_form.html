@@ -1,9 +1,0 @@
-{% extends "admin/change_form.html" %}
-{% load i18n admin_urls %}
-
-{% block form_top %}
-    <form method="post" action="{% url 'admin:duplicate_event' original.pk %}">
-        {% csrf_token %}
-        <input type="submit" value="Duplicate Event">
-    </form>
-{% endblock %}

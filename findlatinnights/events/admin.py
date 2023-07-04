@@ -1,9 +1,6 @@
 from django.contrib import admin
 from django.utils.html import format_html
 from findlatinnights.events.models import Event
-from django.http import HttpResponseRedirect
-from django.urls import path
-from datetime import timedelta
 
 
 def weekday(d):
@@ -38,7 +35,7 @@ class WeekdayListFilter(admin.SimpleListFilter):
         else:
             return queryset
 
-
+@admin.register(Event)
 class EventAdmin(admin.ModelAdmin):
     list_filter = (WeekdayListFilter, )
     list_display = ('title', 'display_link', )
@@ -46,20 +43,3 @@ class EventAdmin(admin.ModelAdmin):
     def display_link(self, obj):
         return format_html("<a href='{url}'>{url}</a>", url=obj.external_url)
     display_link.short_description = 'External URL'
-
-    def get_urls(self):
-        urls = super().get_urls()
-        my_urls = [
-            path('<int:event_id>/duplicate/', self.admin_site.admin_view(self.duplicate_event), name='duplicate_event'),
-        ]
-        return my_urls + urls
-
-    def duplicate_event(self, request, event_id):
-        event = Event.objects.get(id=event_id)
-        event.pk = None
-        event.start_datetime += timedelta(days=7)
-        event.end_datetime += timedelta(days=7)
-        event.save()
-        return HttpResponseRedirect("..")
-
-admin.site.register(Event, EventAdmin)
