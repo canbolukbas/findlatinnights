@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.utils.html import format_html
 from findlatinnights.events.models import Event
 
 
@@ -37,4 +38,8 @@ class WeekdayListFilter(admin.SimpleListFilter):
 @admin.register(Event)
 class EventAdmin(admin.ModelAdmin):
     list_filter = (WeekdayListFilter, )
+    list_display = ('title', 'display_link', )
 
+    def display_link(self, obj):
+        return format_html("<a href='{url}'>{url}</a>", url=obj.external_url)
+    display_link.short_description = 'External URL'
