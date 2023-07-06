@@ -1,4 +1,4 @@
-Django==4.2.2
+Django==4.2.3
 Pillow==9.5.0
 django-extensions==3.2.3
 django-distill==3.1.3
