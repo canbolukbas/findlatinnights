@@ -8,6 +8,5 @@ A website that shows the latin dance night events around your city.
 Run below on your command line:
 
 ```
-./tools/regenerate_static_website.sh
-
+sh ./tools/generate_static_website.sh
 ```
