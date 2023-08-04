@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.utils.html import format_html
-from findlatinnights.events.models import Event
+from findlatinnights.events.models import Event, Venue, City, Country
 
 
 def weekday(d):
@@ -43,3 +43,5 @@ class EventAdmin(admin.ModelAdmin):
     def display_link(self, obj):
         return format_html("<a href='{url}'>{url}</a>", url=obj.external_url)
     display_link.short_description = 'External URL'
+
+admin.site.register([Venue, City, Country])

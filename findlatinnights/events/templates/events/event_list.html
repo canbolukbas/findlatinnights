@@ -11,6 +11,12 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 
 <div class="event-list">
+
+  <div style="text-align: right;">
+    {% for city in all_cities %}
+    &nbsp;<a href="{% url 'event_list_city' city.name %}" class="event-link">{{ city.name }}</a>
+    {% endfor %}
+  </div>
   {% if events %}
     {% with events|first as first_event %}
       {% setvar first_event.start_datetime.date as current_date %}
@@ -24,7 +30,7 @@
             <a href="{{ event.external_url }}" class="event-link">
               <h3>{{ event.title }} 🔗</h3>
             </a>
-            <p class="venue">📍 {{ event.venue }}</p>
+            <p class="venue">📍 {{ event.venue.name }}</p>
             <p class="datetime">⏰ {{ event.start_datetime|time:"H:i" }} - {{ event.end_datetime|time:"H:i" }}</p>
             <p class="price">💵 {{ event.price|floatformat:0 }} TL</p>
             <p class="music">💃
